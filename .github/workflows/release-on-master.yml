@@ -11,7 +11,7 @@ jobs:
       - uses: actions/docker/login@master
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_GITHUB_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOKCER_GITHUB_KEY }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_GITHUB_KEY }}
           DOCKER_REGISTRY_URL: "docker.pkg.github.com"
       - uses: actions/docker/cli@master
         with:
