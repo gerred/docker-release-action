@@ -9,11 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/docker/login@master
-        env:
+        with:
           DOCKER_USERNAME: ${{ secrets.DOCKER_GITHUB_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOKCER_GITHUB_KEY }}
+        env:
           DOCKER_REGISTRY_URL: "docker.pkg.github.com"
       - uses: actions/docker/cli@master
-        args: "build -t docker.pkg.github.com/gerred/docker-release-action/app:1.0"
+        with:
+          args: "build -t docker.pkg.github.com/gerred/docker-release-action/app:1.0"
       - uses: actions/docker/cli@master
-        args: "push docker.pkg.github.com/gerred/docker-release-action/app:1.0.0"
+        with:
+          args: "push docker.pkg.github.com/gerred/docker-release-action/app:1.0.0"
