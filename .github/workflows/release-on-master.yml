@@ -15,7 +15,7 @@ jobs:
           DOCKER_REGISTRY_URL: "docker.pkg.github.com"
       - uses: actions/docker/cli@master
         with:
-          args: "build -t docker.pkg.github.com/gerred/docker-release-action/app:1.0"
+          args: "build -t docker.pkg.github.com/gerred/docker-release-action/app:1.0 ."
       - uses: actions/docker/cli@master
         with:
           args: "push docker.pkg.github.com/gerred/docker-release-action/app:1.0.0"
